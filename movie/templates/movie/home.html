@@ -8,7 +8,7 @@
 		  <div class="media-body">
 		    <div class="article-metadata">
 		      <a class="mr-2" href="">{{ movie.author }}</a>
-		      <small class="text-muted">{{ movie.date_posted|date:"G:i  d F Y" }}</small>
+		      <small class="text-muted">{{ movie.date_premiere }}</small>
 		    </div>
 		    <h2><a class="article-title" href="{% url 'movie-detail' movie.id %}">{{ movie.title }}</a></h2>
 		    <p class="article-content">{{ movie.content }}</p>

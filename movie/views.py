@@ -16,7 +16,7 @@ class MovieListView(ListView):
     model = Movie
     template_name = 'movie/home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'movies'
-    ordering = ['-date_posted']
+    ordering = ['-date_premiere']
     paginate_by = 5
 
 

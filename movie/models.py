@@ -7,8 +7,12 @@ from django.urls import reverse
 class Movie (models.Model):
 	title = models.CharField(max_length=100)
 	content = models.TextField()
-	date_posted = models.DateTimeField(default=timezone.now)
+	date_premiere = models.DateField(null=True, blank=True)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	year = models.PositiveSmallIntegerField(default=2000)
+	imdb_rating = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
+	poster = models.ImageField(upload_to="poster", null=True, blank=True)
+
 
 	def __str__(self):
 		return self.title
