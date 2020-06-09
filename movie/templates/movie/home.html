@@ -4,7 +4,11 @@
 
 	{% for movie in movies %}
 		<article class="media content-section">
-			<img class = "rounded-circle article-img" src=" {{ movie.author.profile.image.url }} ">
+
+      {% if movie.poster %}
+        <img class = "rounded-circle article-img" src=" {{ movie.poster.url }} ">
+      {% endif %}
+			
 		  <div class="media-body">
 		    <div class="article-metadata">
 		      <a class="mr-2" href="">{{ movie.author }}</a>
