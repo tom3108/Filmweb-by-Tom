@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" type="text/css" href="{% static 'movie/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'movie/film.css' %}">
 
 
 
 </head>
 <body>
 	<header class="site-header">
-	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+	  <nav id="nawi" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
 	    <div class="container">
-	      <a class="navbar-brand mr-4" href="{% url 'movie-home' %}">Filmweb</a>
+	      <a  class="navbar-brand mr-4" href="{% url 'movie-home' %}" id="logo">Filmweb</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	      </button>
@@ -30,12 +30,12 @@
 	        <!-- Navbar Right Side -->
 	        <div class="navbar-nav">
 	          {% if user.is_authenticated %}
-	          	  <a class="nav-item nav-link" href="{% url 'movie-create' %}">New Movie</a>
-		          <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-		          <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+	          	  <a class="nav-item nav-link" href="{% url 'movie-create' %}">Nowy Film</a>
+		          <a class="nav-item nav-link" href="{% url 'profile' %}">Profil</a>
+		          <a class="nav-item nav-link" href="{% url 'logout' %}">Wyloguj</a>
 	          {% else %}
-		          <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-		          <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+		          <a class="nav-item nav-link" href="{% url 'login' %}">Zaloguj</a>
+		          <a class="nav-item nav-link" href="{% url 'register' %}">Utwórz konto</a>
 		      {% endif %}  
 
 	        </div>
@@ -43,8 +43,8 @@
 	    </div>
 	  </nav>
 	</header>
-	<main role="main" class="container">
-	  <div class="row">
+	<main id="wrapper" role="main" class="container">
+	  <div id="body1" class="container">
 	    <div class="col-md-8">
 
 	    	
@@ -63,15 +63,5 @@
 	  </div>
 	</main>
 
-
-
-
-
-
-	<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
