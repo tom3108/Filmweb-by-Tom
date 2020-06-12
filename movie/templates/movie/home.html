@@ -15,6 +15,7 @@
 		      <small class="text-muted">{{ movie.date_premiere }}</small>
 		    </div>
 		    <h2><a class="article-title" href="{% url 'movie-detail' movie.id %}">{{ movie.title }}</a></h2>
+        <h2><a class="article-title" href="{% url 'movie-detail' movie.id %}">{{ movie.title_eng }}</a></h2>
         <h2><a class="article-title" href="">{{ movie.imdb_rating }}</a></h2>
 		  </div>
 		</article>
