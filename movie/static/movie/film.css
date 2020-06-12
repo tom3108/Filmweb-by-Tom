@@ -51,7 +51,8 @@ ul {
 }
 
 #body1{
- padding: 5px 0 0 60px;
+  max-width: 1000px;
+  padding:0 60px;
 }
 
 #tyt{ 
