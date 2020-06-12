@@ -4,11 +4,10 @@
 
 
 	<article class="media content-section">
-		<img class = "rounded-circle article-img" src=" {{ object.author.profile.image.url }} ">
+		<img class = "rounded-circle article-img" src=" {{ movie.poster.url }} ">
 	  <div class="media-body">
 	    <div class="article-metadata">
 	      <a class="mr-2" href="">{{ object.author }}</a>
-	      <small class="text-muted">{{ object.date_premiere }}</small>
 	      {% if object.author == user %}
 	      	<div>
 
@@ -20,8 +19,11 @@
 	      {% endif %}
 	    </div>
 	    <h2 class="article-title" >{{ object.title }}</h2>
+	    <h2 class="article-title" >{{ object.title_eng }}</h2>
 	    <h2 class="article-title" >{{ object.imdb_rating }}</h2>
 	    <p class="article-content">{{ object.content }}</p>
+	    <p class="article-content"> date premiere: {{ object.date_premiere }} </p>
+	    <p class="article-content"> director: {{ object.director }} </p>
 	  </div>
 	</article>
 

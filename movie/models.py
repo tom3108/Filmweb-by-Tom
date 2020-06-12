@@ -8,6 +8,7 @@ class Movie (models.Model):
 	title = models.CharField(max_length=100)
 	title_eng = models.CharField(max_length=100, default='default')
 	content = models.TextField()
+	director = models.CharField(max_length=100, default='default')
 	date_premiere = models.DateField(null=True, blank=True)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
 	year = models.PositiveSmallIntegerField(default=2000)

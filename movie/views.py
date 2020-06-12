@@ -27,7 +27,7 @@ class MovieDetailView(DetailView):
 
 class MovieCreateView(LoginRequiredMixin, CreateView):
     model = Movie
-    fields = ['title', 'title_eng' ,'content', 'date_premiere', 'year', 'imdb_rating', 'poster' ]
+    fields = ['title', 'title_eng' ,'content', 'director', 'date_premiere', 'year', 'imdb_rating', 'poster' ]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -36,7 +36,7 @@ class MovieCreateView(LoginRequiredMixin, CreateView):
 
 class MovieUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Movie
-    fields = ['title','title_eng' , 'content', 'date_premiere', 'year', 'imdb_rating', 'poster' ]
+    fields = ['title','title_eng' , 'content', 'director', 'date_premiere', 'year', 'imdb_rating', 'poster' ]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
