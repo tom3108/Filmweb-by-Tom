@@ -4,10 +4,10 @@
 
 
 	<article class="media content-section">
-		<img class = "img-thumbnail article-img" src=" {{ movie.poster.url }} ">
+		<img class = "img-thumbnail article-img2" src=" {{ movie.poster.url }} ">
 	  <div class="media-body">
 	    <div class="article-metadata">
-	      <a class="mr-2" href="">{{ object.author }}</a>
+	      <h2 id="aut" class="article-title"> opubilkował: {{ object.author }}</h2>
 	      {% if object.author == user %}
 	      	<div>
 
@@ -18,13 +18,12 @@
 
 	      {% endif %}
 	    </div>
-	    <h2 class="article-title" >{{ object.title }}</h2>
-	    <p class="article-content">({{ object.year }})</p>
-	    <h2 class="article-title" >{{ object.title_eng }}</h2>
-	    <h2 class="article-title" >{{ object.imdb_rating }}</h2>
+	    <h2 id="tyt" class="article-title" >{{ object.title_with_year }}</h2>
+	    <h2 id="tytE" class="article-title" >{{ object.title_eng }}</h2>
+	    <h2 id="rank" class="article-title" >{{ object.imdb_rating }}</h2>
 	    <p class="article-content">{{ object.content }}</p>
-	    <p class="article-content"> date premiere: {{ object.date_premiere }} </p>
-	    <p class="article-content"> director: {{ object.director }} </p>
+	    data premiery: <p class="article-content">{{ object.date_premiere }} </p>
+	    reżyser: <p class="article-content">  {{ object.director }} </p>
 	  </div>
 	</article>
 

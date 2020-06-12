@@ -11,13 +11,13 @@
 			
 		  <div class="media-body">
 		    <div class="article-metadata">
-		      <small class="text-muted"> author: {{ movie.author }}</small>
+		      <h2 id="aut" class="article-title"> opubilkował: {{ movie.author }}</h2>
 
 
 		    </div>
-		    <h2><a class="article-title" href="{% url 'movie-detail' movie.id %}">{{ movie.title }}</a></h2> <p class="article-content"> ({{ movie.year }})</p>
-        <h2><a class="article-title" href="{% url 'movie-detail' movie.id %}">{{ movie.title_eng }}</a></h2>
-        <p class="article-content">{{ movie.imdb_rating }}</p>
+		    <h2 id="tyt"><a  class="article-title" href="{% url 'movie-detail' movie.id %}">{{ movie.title_with_year }}</a></h2> 
+        <h2 id="tytE" ><a  class="article-title" href="{% url 'movie-detail' movie.id %}">{{ movie.title_eng }}</a></h2>
+        <h2 id="rank" class="article-content">{{ movie.imdb_rating }}</h2>
 		  </div>
 		</article>
 	{% endfor %}

@@ -18,6 +18,9 @@ class Movie (models.Model):
 
 	def __str__(self):
 		return self.title
+		
+	def title_with_year(self):
+		return "{} ({})".format(self.title, self.year)
 
 	def get_absolute_url(self):
 		return reverse('movie-detail', kwargs={'pk': self.pk})
