@@ -4,6 +4,18 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
+class ExtraInfo (models.Model):
+	KIND = {
+
+		(0,'Other'),
+		(1,'Horror'),
+		(2,'Dama'),
+
+	}
+
+	length = models.PositiveSmallIntegerField(default=0)
+	kind = models.PositiveSmallIntegerField(default=0, choices=KIND)
+
 class Movie (models.Model):
 	title = models.CharField(max_length=100)
 	title_eng = models.CharField(max_length=100, default='default')
@@ -14,6 +26,7 @@ class Movie (models.Model):
 	year = models.PositiveSmallIntegerField(default=2000)
 	imdb_rating = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
 	poster = models.ImageField(upload_to="poster", null=True, blank=True)
+	extra = models.OneToOneField(ExtraInfo, on_delete=models.CASCADE, null=True, blank=True)
 
 
 	def __str__(self):
@@ -24,5 +37,4 @@ class Movie (models.Model):
 
 	def get_absolute_url(self):
 		return reverse('movie-detail', kwargs={'pk': self.pk})
-
 
