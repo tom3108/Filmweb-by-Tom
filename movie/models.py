@@ -38,3 +38,8 @@ class Movie (models.Model):
 	def get_absolute_url(self):
 		return reverse('movie-detail', kwargs={'pk': self.pk})
 
+class Rate(models.Model):
+	review = models.TextField(default="", blank=True)
+	stars = models.PositiveSmallIntegerField(default=5)
+	film = models.ForeignKey(Movie, on_delete=models.CASCADE)
+
