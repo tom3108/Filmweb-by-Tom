@@ -8,7 +8,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-from .models import Movie
+from .models import Movie, ExtraInfo
 
 
 

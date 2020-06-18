@@ -17,6 +17,8 @@
 		    </div>
 		    <h2 id="tyt"><a  class="article-title" href="{% url 'movie-detail' movie.id %}">{{ movie.title_with_year }}</a></h2> 
         <h2 id="tytE" ><a  class="article-title" href="{% url 'movie-detail' movie.id %}">{{ movie.title_eng }}</a></h2>
+        <p class="article-content">data premiery: {{ movie.date_premiere }} </p>
+        <p class="article-content">reżyser:  {{ movie.director }} </p>
         <h2 id="rank" class="article-content">{{ movie.imdb_rating }}</h2>
 		  </div>
 		</article>
