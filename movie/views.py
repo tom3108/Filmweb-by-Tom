@@ -10,12 +10,16 @@ from django.views.generic import (
 )
 from .models import Movie, ExtraInfo
 from rest_framework import viewsets
-from .serializers import UserSerializer
+from .serializers import UserSerializer, MovieSerializer
 
 
 class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+class MovieView(viewsets.ModelViewSet):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer  
 
 
 class MovieListView(ListView):
