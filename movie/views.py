@@ -9,7 +9,13 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Movie, ExtraInfo
+from rest_framework import viewsets
+from .serializers import UserSerializer
 
+
+class UserView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
 class MovieListView(ListView):
